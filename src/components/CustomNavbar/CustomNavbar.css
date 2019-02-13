@@ -1,0 +1,27 @@
+p.nav-link {
+    margin       : 0;
+    cursor       : pointer;
+    padding-left : 5px !important;
+}
+
+.nav-link,
+.navbar-brand,
+.navbar-brand a,
+.navbar-brand a.active {
+    color : #ffffff !important;
+}
+
+.active.nav-link {
+    background-color : #335ed7;
+}
+
+.navbar {
+    background-color : #2892d7 !important;
+}
+
+
+@media (min-width : 992px) {
+    .nav-link {
+        padding-left : 0;
+    }
+}
