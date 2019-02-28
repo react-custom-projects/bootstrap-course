@@ -1,0 +1,81 @@
+.dropdown-wrapper {
+    position : relative;
+}
+
+.dropdown {
+    position : relative;
+    width    : 100%;
+    height   : 50px;
+}
+
+.dropdown.active .options-wrapper {
+    display : block;
+}
+
+.dropdown .options-wrapper {
+    position : absolute;
+    width    : 100%;
+    bottom   : -1px;
+    left     : 0;
+    display  : none;
+    height   : 1px;
+}
+
+.dropdown  .options-container {
+    width      : 100%;
+    border     : 1px solid #c6c6c6;
+    border-top : 0;
+    max-height : 250px;
+    overflow-y : auto;
+    position   : relative;
+    z-index    : 1;
+}
+
+.dropdown .option {
+    font-size        : 16px;
+    padding-left     : 15px;
+    padding-right    : 15px;
+    background-color : #ffffff;
+    transition       : background-color 0.2s;
+    width            : 100%;
+    height           : 50px;
+    display          : flex;
+    align-items      : center;
+}
+
+.dropdown .option:hover {
+    background-color : #c6c6c6;
+    cursor           : pointer;
+}
+
+.dropdown .selected-value-wrapper {
+    border           : 1px solid #c6c6c6;
+    width            : 100%;
+    height           : 100%;
+    display          : flex;
+    align-items      : center;
+    text-overflow    : ellipsis;
+    padding-left     : 15px;
+    padding-right    : 15px;
+    background-color : #ffffff;
+}
+
+.dropdown .selected-value-wrapper:hover {
+    cursor : pointer;
+}
+
+.dropdown .selected-value {
+    margin    : 0 10px 0 0;
+    font-size : 16px;
+    flex-grow : 1;
+}
+
+.dropdown .selected-value .icon-chevron-down {
+    font-size : 16px;
+    border    : 1px solid #c6c6c6;
+}
+
+.dropdown .icon-wrapper {
+    flex-grow   : 0;
+    flex-shrink : 0;
+}
