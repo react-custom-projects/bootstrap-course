@@ -4,6 +4,7 @@ import {bComponents} from '../../import-all-bootstrap-components';
 
 import './Home.css';
 import Dropdown from '../../UI/Dropdown/Dropdown';
+import ContactData from "../ContactData/ContactData";
 
 class Home extends Component {
     state = {
@@ -56,6 +57,7 @@ class Home extends Component {
                         <p>That's a crooked tree. We'll send him to Washington. These little son of a guns hide in your brush and you just have to push them out.</p>
                     </bComponents.Col>
                 </bComponents.Row>
+                <ContactData/>
             </bComponents.Container>
         );
     }
