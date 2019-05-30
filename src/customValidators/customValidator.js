@@ -111,11 +111,12 @@ export const validateYoutubeUrl = (inputValue) => {
     return isError;
 };
 
-// used to validate the height and the width of file input type
+//****************** file input validators ******************/
+
+// used to read image from file input
+// it returns a promise containing image width & height
 // file => single image object
-// imgWidth => is the required width
-// imgHeight => is the required height
-export const validateHeightWidth = (file, imgWidth, imgHeight) => {
+export const readImageFile = (file) => {
     return new Promise((resolve, reject) => {
         let reader = new FileReader();
         reader.readAsDataURL(file);
@@ -128,10 +129,23 @@ export const validateHeightWidth = (file, imgWidth, imgHeight) => {
 
             //Validate the File Height and Width.
             image.onload = function () {
-                let height = this.height;
-                let width  = this.width;
-                (height >= imgHeight && width >= imgWidth) ? resolve(false) : resolve(true);
+                resolve({height: this.height, width: this.width});
             };
         };
     })
+};
+
+// used to validate image dimensions
+export const validateDimensions = (imageWidth, imageHeight, minWidth, minHeight) => {
+    return imageHeight >= minHeight && imageWidth >= minWidth;
+};
+
+// used to validate image aspect ratio
+export const validateAspectRatio = (imageWidth, imageHeight, acceptedRatio) => {
+    return imageHeight / imageWidth === acceptedRatio;
+};
+
+// used validate file size
+export const validateFileSize = (fileSize, maxSize) => {
+    return fileSize <= maxSize;
 };
